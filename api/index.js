@@ -3,7 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const app = express()
 const port = process.env.PORT
-
+const userRoute = require("./routes/user.routes.js")
 
 //jab bhi db connect karo => try chatch is necessary and async await is req 
 
@@ -23,13 +23,15 @@ async function check() {
 check()
 
 
+app.use('/user',userRoute);
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/about', (req, res) => {
-    res.send('Why you are looking here?')
-  })
+// app.get('/about', (req, res) => {
+//     res.send('Why you are looking here?')
+//   })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
