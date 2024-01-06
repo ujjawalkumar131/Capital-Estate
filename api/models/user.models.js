@@ -1,23 +1,23 @@
 //import karo
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
-//scehema banao
+
 const userSchema = new mongoose.Schema(
   {
     username: {
-      type: string,
+      type: String,
       required: true,
       unique: true,
       lowercase: true,
     },
     email: {
-      type: string,
+      type: String,
       required: true,
       unique: true,
     },
 
     password: {
-      type: string,
+      type: String,
       required: true,
     },
   },
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema(
 );
 
 //schma ka model banao
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 //model ko export kar do 
-export default User;
+module.exports = User

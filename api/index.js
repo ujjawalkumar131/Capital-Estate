@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express()
 const port = process.env.PORT
 const userRoute = require("./routes/user.routes.js")
-
+const authRoute = require('./routes/auth.routes.js')
 //jab bhi db connect karo => try chatch is necessary and async await is req 
 
 //mongoose.connect(`${MONGO_URL}`); error dega 
@@ -22,8 +22,10 @@ async function check() {
 
 check()
 
+app.use(express.json())
 
 app.use('/user',userRoute);
+app.use('/auth',authRoute);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
