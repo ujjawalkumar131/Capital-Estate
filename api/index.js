@@ -1,15 +1,17 @@
-require('dotenv').config()
-const express = require('express')
-const mongoose = require('mongoose');
-const app = express()
+dotenv.config();
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
 const port = process.env.PORT
-const userRoute = require("./routes/user.routes.js")
-const authRoute = require('./routes/auth.routes.js')
+import userRouter from "./routes/user.routes.js";
+import authRouter from "./routes/auth.routes.js";
+
 //jab bhi db connect karo => try chatch is necessary and async await is req 
 
 //mongoose.connect(`${MONGO_URL}`); error dega 
 
-
+const app = express()
 async function check() {
     try {
         const client = await mongoose.connect(process.env.MONGO_URL)
@@ -24,8 +26,8 @@ check()
 
 app.use(express.json())
 
-app.use('/user',userRoute);
-app.use('/auth',authRoute);
+app.use('/api/user',userRouter);
+app.use('/api/auth',authRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

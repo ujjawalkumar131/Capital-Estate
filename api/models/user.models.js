@@ -1,5 +1,5 @@
 //import karo
-const mongoose = require('mongoose');
+import  mongoose  from "mongoose";
 
 
 const userSchema = new mongoose.Schema(
@@ -28,4 +28,4 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.model('User', userSchema);
 
 //model ko export kar do 
-module.exports = User
+export default User;
