@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import About from './pages/About';
 import Header from './components/Header';
 import PrivateProfile from './components/PrivateProfile';
+import CreateListing from './pages/CreateListing';
 //import Navbar from './pages/Navbar';
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
 
     <Route element={<PrivateProfile/>}>
     <Route path="/profile" element ={<Profile/>} />  
+    <Route path="/create-listing" element = {<CreateListing/>} />
     </Route>
     </Routes>
     </BrowserRouter>
