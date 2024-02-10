@@ -25,7 +25,6 @@ const UpdateListing = () => {
     offer: false,
     parking: false,
     furnished: false,
-    kitchen:false,
   });
 
   const [imageUploadError, setImageUploadError] = useState(false);
@@ -110,8 +109,7 @@ const UpdateListing = () => {
     if (
       e.target.id === "parking" ||
       e.target.id === "furnished" ||
-      e.target.id === "offer" ||
-      e.target.id === "kitchen"
+      e.target.id === "offer"
     ) {
       setFormData({
         ...formData,
@@ -269,7 +267,7 @@ const UpdateListing = () => {
               />
               <span>Furnished</span>
             </div>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <input
                 type="checkbox"
                 id="kitchen"
@@ -278,7 +276,7 @@ const UpdateListing = () => {
                 checked={formData.kitchen}
               />
               <span>Kitchen</span>
-            </div>
+            </div> */}
             <div className="flex gap-2">
               <input
                 type="checkbox"

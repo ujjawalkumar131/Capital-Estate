@@ -34,10 +34,6 @@ const listingSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-    kitchen : {
-     type : Boolean,
-     required : true,
-    },
     parking: {
       type: Boolean,
       required: true,

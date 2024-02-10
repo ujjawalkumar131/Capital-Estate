@@ -24,7 +24,6 @@ const CreateListing = () => {
     offer: false,
     parking: false,
     furnished: false,
-    kitchen:false,
   });
 
   const [imageUploadError, setImageUploadError] = useState(false);
@@ -55,7 +54,7 @@ const CreateListing = () => {
           setUploading(false);
         })
         .catch((err) => {
-          setImageUploadError("Image upload failed. (2 mb max per image)");
+          setImageUploadError("Image upload failed. (5 mb max per image)");
           setUploading(false);
         });
     } else {
@@ -108,8 +107,7 @@ const CreateListing = () => {
     if (
       e.target.id === "parking" ||
       e.target.id === "furnished" ||
-      e.target.id === "offer" ||
-      e.target.id === "kitchen"
+      e.target.id === "offer" 
     ) {
       setFormData({
         ...formData,
@@ -249,16 +247,16 @@ const CreateListing = () => {
               />
               <span>Furnished</span>
             </div>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <input
                 type="checkbox"
-                id="kitchen"
+                id="wifi"
                 className="w-5"
                 onChange={handleChange}
-                checked={formData.kitchen}
+                checked={formData.wifi}
               />
-              <span>Kitchen</span>
-            </div>
+              <span>Wifi</span>
+            </div> */}
             <div className="flex gap-2">
               <input
                 type="checkbox"

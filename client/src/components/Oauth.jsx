@@ -33,7 +33,7 @@ const handleGoogleClick = async () => {
 
        const data = await res.json();
        dispatch(signInSuccess(data));  
-      navigate('/Home')
+      navigate('/')
 
     } catch(error)
     {

@@ -34,9 +34,7 @@ app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
 app.use('/api/listing',listingRouter);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+
 
 // app.get('/about', (req, res) => {
 //     res.send('Why you are looking here?')

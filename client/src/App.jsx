@@ -9,6 +9,8 @@ import Header from './components/Header';
 import PrivateProfile from './components/PrivateProfile';
 import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/updateListing';
+import Listing from './pages/Listing';
+import Search from './pages/Search';
 //import Navbar from './pages/Navbar';
 const App = () => {
 
@@ -16,11 +18,12 @@ const App = () => {
     <BrowserRouter>
     <Header/>
     <Routes>
-    <Route path="/Home" element ={<Home/>} /> 
+    <Route path="/" element ={<Home/>} /> 
     <Route path="/sign-in" element ={<Signin/>} />  
     <Route path="/sign-up" element ={<Signup/>} />  
     <Route path="/about" element ={<About/>} />  
-    
+    <Route path="/listing/:listingId" element = {<Listing/>} />
+    <Route path="/search" element={<Search/>} />
     <Route element={<PrivateProfile/>}>
     <Route path="/profile" element ={<Profile/>} />  
     <Route path="/create-listing" element = {<CreateListing/>} />
