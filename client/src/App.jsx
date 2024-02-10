@@ -8,7 +8,7 @@ import About from './pages/About';
 import Header from './components/Header';
 import PrivateProfile from './components/PrivateProfile';
 import CreateListing from './pages/CreateListing';
-import UpdateListing from './pages/updateListing';
+import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
 //import Navbar from './pages/Navbar';
