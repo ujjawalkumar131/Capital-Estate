@@ -8,7 +8,7 @@ const port = process.env.PORT
 import userRouter from "./routes/user.routes.js";
 import authRouter from "./routes/auth.routes.js";
 import listingRouter from "./routes/listing.routes.js";
-
+import path from 'path'
 //jab bhi db connect karo => try chatch is necessary and async await is req 
 
 //mongoose.connect(`${MONGO_URL}`); error dega 
@@ -26,23 +26,27 @@ async function check() {
 
 check()
 
+const __dirname = path.resolve();
+
+
 // like middleware run for all the routes 
 app.use(express.json());
 app.use(cookieParser());
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
 app.use('/api/listing',listingRouter);
 
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 
-// app.get('/about', (req, res) => {
-//     res.send('Why you are looking here?')
-//   })
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
 
 app.use((error, req, res, next) => {
   const statusCode = error.statusCode || 500;
