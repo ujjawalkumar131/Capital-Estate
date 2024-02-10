@@ -32,8 +32,8 @@ const __dirname = path.resolve();
 // like middleware run for all the routes 
 app.use(express.json());
 app.use(cookieParser());
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(3000, () => {
+  console.log(`Example app listening on port 3000`)
 })
 
 app.use('/api/user',userRouter);
